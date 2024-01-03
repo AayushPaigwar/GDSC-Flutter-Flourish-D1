@@ -6,6 +6,9 @@
     ⭐️  A Flutter Begineer's Event Organized by GDSC GHRCE⭐️ <br>
 </h2>
 
+[![Follow me on GitHub](https://img.shields.io/github/followers/AayushPaigwar?label=Follow&style=social)](https://github.com/AayushPaigwar)
+
+
 # Project - 1 Basic Linktree App
 
 
