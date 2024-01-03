@@ -7,14 +7,6 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  // launchUrl(Uri url) async {
-  //   if (await canLaunchUrl(url)) {
-  //     await launchUrl(url);
-  //   } else {
-  //     throw 'Could not launch $url';
-  //   }
-  // }
-
   const MyApp({super.key});
 
   @override
@@ -41,7 +33,6 @@ class MyApp extends StatelessWidget {
               child:
                   //Profile Pic
                   Column(
-                // crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const CircleAvatar(
