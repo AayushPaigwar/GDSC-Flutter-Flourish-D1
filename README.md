@@ -11,6 +11,11 @@
 
 # Project - 1 Basic Linktree App
 
+<p align="center">
+  <img src="SS.png" alt="Screenshot" width= "700">
+</p>
+
+
 
 ## Step to Use
 
@@ -38,6 +43,8 @@
 
 6. **Run the App:**
    - Run the app using the **Start Debugging** button.
+
+
 
 ## Happy Coding!🚀
 
