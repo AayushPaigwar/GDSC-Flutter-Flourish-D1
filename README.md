@@ -1,10 +1,10 @@
 
-<h1 align="center" style="border-bottom: none">
+<h2 align="center" style="border-bottom: none">
     <b>
         <a href="https://github.com/AayushPaigwar/GDSC-Flutter-Flourish-D1/">Flutter Flourish</a><br>
     </b>
     ⭐️  A Flutter Begineer's Event Organized by GDSC GHRCE⭐️ <br>
-</h1>
+</h2>
 
 # Project - 1 Basic Linktree App
 
