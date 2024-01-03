@@ -1,16 +1,46 @@
-# i_am_rich
 
-A new Flutter project.
+<h1 align="center" style="border-bottom: none">
+    <b>
+        <a href="https://github.com/AayushPaigwar/GDSC-Flutter-Flourish-D1/">Flutter Flourish</a><br>
+    </b>
+    ⭐️  A Flutter Begineer's Event Organized by GDSC GHRCE⭐️ <br>
+</h1>
 
-## Getting Started
+# Project - 1 Basic Linktree App
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+## Step to Use
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+1. **Download the Project:**
+   - Click on the green "Code" button.
+   - Select "Download ZIP".
+   - Once the ZIP file is downloaded, locate the file in your Downloads folder or the chosen download location.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+3. **Extract the Project:**
+   - Right-click on the downloaded ZIP file.
+   - Choose "Extract All..." from the context menu.
+   - Select the destination where you want to extract the files.
+   - Click "Extract".
+
+4. **Navigate to the Project:**
+   - Open the extracted folder in VS Code.
+
+5. **Install Dependencies:**
+   - Open Terminal in VS Code using ```Ctrl + J``` / ```cmd + J```
+   - Run the following command to install dependencies:
+
+     ```bash
+     flutter pub get
+     ```
+
+6. **Run the App:**
+   - Run the app using the **Start Debugging** button.
+
+## Happy Coding!🚀
+
+---
+
+<div align="center">
+  
+Made with ❤️ by [Aayush Paigwar](https://github.com/AayushPaigwar)
+</div>

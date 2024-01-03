@@ -2,21 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-launchUrl(url) async {
-  // ignore: deprecated_member_use
-  if (await canLaunch(url)) {
-    // ignore: deprecated_member_use
-    await launch(url);
-  } else {
-    throw 'could not launch $url';
-  }
-}
-
 void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  // launchUrl(Uri url) async {
+  //   if (await canLaunchUrl(url)) {
+  //     await launchUrl(url);
+  //   } else {
+  //     throw 'Could not launch $url';
+  //   }
+  // }
+
   const MyApp({super.key});
 
   @override
@@ -24,40 +22,38 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: const Color.fromARGB(255, 0, 0, 0),
+        backgroundColor: Colors.white,
         body: Container(
-          color: const Color(0xFF212738),
-          // decoration: const BoxDecoration(
-          //   gradient: LinearGradient(
-          //     begin: Alignment.topLeft,
-          //     end: Alignment.bottomRight,
-          //     colors: [
-          //       Color(0xFF212730),
-          //       Color(0xFF212740),
-          //     ],
-          //   ),
-          // ),
+          height: double.infinity,
+          width: double.infinity,
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomCenter,
+              colors: [
+                Color.fromARGB(255, 0, 116, 72),
+                Color.fromARGB(255, 0, 27, 16),
+              ],
+            ),
+          ),
           child: SingleChildScrollView(
             child: SafeArea(
               child:
                   //Profile Pic
-                  // ignore: prefer_const_literals_to_create_immutables
                   Column(
+                // crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Center(
-                    child: CircleAvatar(
-                      radius: 50,
-                      backgroundImage: AssetImage('images/aayush.jpg'),
-                    ),
+                  const CircleAvatar(
+                    radius: 50,
+                    backgroundImage: AssetImage('images/aayush.jpg'),
                   ),
 
                   // NAME
-
                   const Text(
                     "Aayush Paigwar",
                     style: TextStyle(
-                      fontFamily: 'Pacifico',
+                      fontFamily: 'MontserratAlternates',
                       fontSize: 35,
                       color: Color(0xFFEDF2EF),
                       //fontWeight: FontWeight.bold,
@@ -66,84 +62,34 @@ class MyApp extends StatelessWidget {
 
                   //SPACE BETWEEN NAME AND BIO
                   const SizedBox(
-                    height: 15,
+                    height: 8,
                   ),
 
                   //BIO
-
                   const Text(
-                    'ARTIFICIAL INTELLIGENCE STUDENT',
+                    'Flutter Developer',
                     style: TextStyle(
-                        fontFamily: 'SourceSansPro',
+                        fontFamily: 'MontserratAlternates',
                         fontSize: 20,
                         fontWeight: FontWeight.w600,
                         color: Color(0xFFEDF2EF),
                         wordSpacing: 2),
                   ),
 
-                  const SizedBox(
-                    height: 20,
-                    width: 200,
+                  SizedBox(
+                    height: 40,
+                    width: 300,
                     child: Divider(
-                      color: Color(0xFFEDF2EF),
-                    ),
-                  ),
-
-                  //SOCIAL HANDLES
-
-                  // Row(
-                  //   children: const [
-                  //     SizedBox(
-                  //       width: 110,
-                  //     ),
-                  //     IconButton(
-                  //       icon: Icon(
-                  //         FontAwesomeIcons.instagram,
-                  //         color: Color.fromARGB(255, 255, 0, 191),
-                  //         size: 50,
-                  //       ),
-
-                  //     ),
-                  //     SizedBox(
-                  //       width: 20,
-                  //     ),
-                  //     Icon(
-                  //       FontAwesomeIcons.linkedin,
-                  //       color: Colors.blueAccent,
-                  //       size: 50,
-                  //     ),
-                  //     SizedBox(
-                  //       width: 20,
-                  //     ),
-                  //     Icon(
-                  //       FontAwesomeIcons.github,
-                  //       size: 50,
-                  //       color: Color.fromARGB(255, 255, 255, 255),
-                  //     )
-                  //   ],
-                  // ),
-
-                  //FOR MAKING SPACE BETWEEN "CARD" AND "DETAILS"
-
-                  const SizedBox(
-                    height: 20,
-                    width: 200,
-                    child: Divider(
-                      color: Colors.black,
+                      color: Colors.green.withOpacity(0.4),
                     ),
                   ),
 
                   // CARD FOR ADDING PRSL DETAILS
-
                   //CARD-1 (GITHUB)
-                  ElevatedButton(
-                    // ignore: deprecated_member_use
-                    style: ElevatedButton.styleFrom(
-                      primary: const Color(0xFF212738),
-                    ),
-                    // ignore: unused_local_variable
-                    onPressed: () {
-                      const url = 'https://github.com/AayushPaigwar';
+                  InkWell(
+                    onTap: () {
+                      final Uri url =
+                          Uri.parse('https://github.com/AayushPaigwar');
                       launchUrl(url);
                     },
                     child: const Card(
@@ -162,7 +108,7 @@ class MyApp extends StatelessWidget {
                                 color: Color(0xFF212738),
                                 fontSize: 19,
                                 fontWeight: FontWeight.w500,
-                                fontFamily: 'SourceSansPro'),
+                                fontFamily: 'MontserratAlternates'),
                           ),
                         ),
                       ),
@@ -170,17 +116,14 @@ class MyApp extends StatelessWidget {
                   ),
 
                   //CARD-2 (LINKEDIN)
-                  ElevatedButton(
-                    // ignore: deprecated_member_use
-                    style: ElevatedButton.styleFrom(
-                      primary: const Color(0xFF212738),
-                    ),
-                    onPressed: () {
-                      const url =
-                          'https://www.linkedin.com/in/aayush-paigwar-457946225/';
+                  InkWell(
+                    onTap: () {
+                      final Uri url = Uri.parse(
+                          'https://www.linkedin.com/in/aayush-paigwar/');
                       launchUrl(url);
                     },
                     child: const Card(
+                      surfaceTintColor: Colors.amber,
                       margin: EdgeInsets.symmetric(
                           vertical: 10.0, horizontal: 25.0),
                       child: Padding(
@@ -188,7 +131,7 @@ class MyApp extends StatelessWidget {
                         child: ListTile(
                           leading: Icon(
                             FontAwesomeIcons.linkedin,
-                            color: Color.fromARGB(255, 0, 68, 255),
+                            color: Color(0xFF212738),
                           ),
                           title: Text(
                             'LinkedIn',
@@ -196,7 +139,7 @@ class MyApp extends StatelessWidget {
                                 color: Color(0xFF212738),
                                 fontSize: 19,
                                 fontWeight: FontWeight.w500,
-                                fontFamily: 'SourceSansPro'),
+                                fontFamily: 'MontserratAlternates'),
                           ),
                         ),
                       ),
@@ -204,13 +147,10 @@ class MyApp extends StatelessWidget {
                   ),
 
                   //CARD-3 (INSTAGRAM)
-                  ElevatedButton(
-                    // ignore: deprecated_member_use
-                    style: ElevatedButton.styleFrom(
-                      primary: const Color(0xFF212738),
-                    ),
-                    onPressed: () {
-                      const url = 'https://www.instagram.com/aayush___27/';
+                  InkWell(
+                    onTap: () {
+                      final Uri url =
+                          Uri.parse('https://www.instagram.com/aayush___27/');
                       launchUrl(url);
                     },
                     child: const Card(
@@ -221,7 +161,7 @@ class MyApp extends StatelessWidget {
                         child: ListTile(
                           leading: Icon(
                             FontAwesomeIcons.instagram,
-                            color: Color.fromARGB(255, 255, 0, 221),
+                            color: Colors.black,
                           ),
                           title: Text(
                             'Instagram',
@@ -229,21 +169,18 @@ class MyApp extends StatelessWidget {
                                 color: Color(0xFF212738),
                                 fontSize: 19,
                                 fontWeight: FontWeight.w500,
-                                fontFamily: 'SourceSansPro'),
+                                fontFamily: 'MontserratAlternates'),
                           ),
                         ),
                       ),
                     ),
                   ),
 
-                  // CARD-4 (PHONE NO.)
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      // ignore: deprecated_member_use
-                      primary: const Color(0xFF212738),
-                    ),
-                    onPressed: () {
-                      const url = 'mailto:aayush.paigwar123@gmail.com ';
+                  // CARD-4 (EMAIL)
+                  InkWell(
+                    onTap: () {
+                      final Uri url =
+                          Uri.parse('mailto:aayush.paigwar123@gmail.com ');
                       launchUrl(url);
                     },
                     child: const Card(
@@ -262,7 +199,7 @@ class MyApp extends StatelessWidget {
                                 color: Color(0xFF212738),
                                 fontSize: 19,
                                 fontWeight: FontWeight.w500,
-                                fontFamily: 'SourceSansPro'),
+                                fontFamily: 'MontserratAlternates'),
                           ),
                         ),
                       ),
@@ -270,14 +207,10 @@ class MyApp extends StatelessWidget {
                   ),
 
                   //CARD-5 (DUMMY)
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      // ignore: deprecated_member_use
-                      primary: const Color(0xFF212738),
-                    ),
-                    onPressed: () {
+                  InkWell(
+                    onTap: () {
                       const url = 'mailto:aayush.paigwar123@gmail.com ';
-                      launchUrl(url);
+                      launchUrl(Uri.parse(url));
                     },
                     child: const Card(
                       color: Color(0xFFEDF2EF),
@@ -287,14 +220,43 @@ class MyApp extends StatelessWidget {
                         padding: EdgeInsets.all(5),
                         child: ListTile(
                           leading: Icon(
-                            // ignore: deprecated_member_use
-                            FontAwesomeIcons.smile,
+                            FontAwesomeIcons.faceSmile,
                             color: Color(0xFF212738),
                           ),
                           title: Text(
                             'DUMMY',
                             style: TextStyle(
-                              fontFamily: 'SourceSansPro',
+                              fontFamily: 'MontserratAlternates',
+                              fontSize: 19,
+                              fontWeight: FontWeight.w500,
+                              color: Color(0xFF212738),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  //CARD-6 (DUMMY)
+                  InkWell(
+                    onTap: () {
+                      const url = 'mailto:aayush.paigwar123@gmail.com ';
+                      launchUrl(Uri.parse(url));
+                    },
+                    child: const Card(
+                      color: Color(0xFFEDF2EF),
+                      margin: EdgeInsets.symmetric(
+                          vertical: 10.0, horizontal: 25.0),
+                      child: Padding(
+                        padding: EdgeInsets.all(5),
+                        child: ListTile(
+                          leading: Icon(
+                            FontAwesomeIcons.faceSmile,
+                            color: Color(0xFF212738),
+                          ),
+                          title: Text(
+                            'DUMMY',
+                            style: TextStyle(
+                              fontFamily: 'MontserratAlternates',
                               fontSize: 19,
                               fontWeight: FontWeight.w500,
                               color: Color(0xFF212738),
@@ -305,15 +267,43 @@ class MyApp extends StatelessWidget {
                     ),
                   ),
 
-                  //CARD-6 (DUMMY)
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      // ignore: deprecated_member_use
-                      primary: const Color(0xFF212738),
-                    ),
-                    onPressed: () {
+                  //CARD-7 (DUMMY)
+                  InkWell(
+                    onTap: () {
                       const url = 'mailto:aayush.paigwar123@gmail.com ';
-                      launchUrl(url);
+                      launchUrl(Uri.parse(url));
+                    },
+                    child: const Card(
+                      color: Color(0xFFEDF2EF),
+                      margin: EdgeInsets.symmetric(
+                          vertical: 10.0, horizontal: 25.0),
+                      child: Padding(
+                        padding: EdgeInsets.all(5),
+                        child: ListTile(
+                          leading: Icon(
+                            // ignore: deprecated_member_use
+                            FontAwesomeIcons.faceSmileBeam,
+                            color: Color(0xFF212738),
+                          ),
+                          title: Text(
+                            "DUMMY",
+                            style: TextStyle(
+                              fontFamily: 'MontserratAlternates',
+                              fontSize: 19,
+                              fontWeight: FontWeight.w500,
+                              color: Color(0xFF212738),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+
+                  //CARD-8 (DUMMY)
+                  InkWell(
+                    onTap: () {
+                      const url = 'mailto:aayush.paigwar123@gmail.com ';
+                      launchUrl(Uri.parse(url));
                     },
                     child: const Card(
                       color: Color(0xFFEDF2EF),
@@ -328,10 +318,10 @@ class MyApp extends StatelessWidget {
                             color: Color(0xFF212738),
                           ),
                           title: Text(
-                            "Yes it's my First Scrollable App",
+                            "Yes, my First Scrollable App",
                             style: TextStyle(
-                              fontFamily: 'SourceSansPro',
-                              fontSize: 19,
+                              fontFamily: 'MontserratAlternates',
+                              fontSize: 16,
                               fontWeight: FontWeight.w500,
                               color: Color(0xFF212738),
                             ),
